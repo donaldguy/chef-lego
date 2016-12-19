@@ -26,7 +26,7 @@ def cmd_with_args(r)
   cmd += "--server #{r.server_url} " if r.server_url != LETSENCRYPT_PROD_SERVER
   cmd += "--path #{r.output_path} "
 
-  if r.challenge == dns
+  if r.challenge == "dns"
     cmd + "--dns=#{r.dns_provider} "
   else
     cmd + "--#{r.challenge} "
